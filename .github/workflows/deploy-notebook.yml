@@ -20,11 +20,6 @@ jobs:
         NOTEBOOK_BASE="/Workspace/Users/arturocvsd@outlook.com/ETL"
         NOTEBOOKS=("Ingest_circuits_data" "Ingest_racing_data" "Tansform" "Load")  # Agrega más según necesitesas
         mkdir -p notebooks_to_deploy
-        echo "Exportando Preparacion_ambiente en modo raw..."
-        curl -s -X GET \
-        -H "Authorization: Bearer $ORIGIN_TOKEN" \
-        "$ORIGIN_HOST/api/2.0/workspace/export?path=$NOTEBOOK_BASE/$nb&format=SOURCE&direct_download=true" \
-        --output "notebooks_to_deploy/Preparacion_ambiente.sql"
         for nb in "${NOTEBOOKS[@]}"; do
           echo "Exportando $nb en modo raw..."
           curl -s -X GET \
@@ -132,20 +127,6 @@ jobs:
           "format": "MULTI_TASK",
           "tasks": [
             {
-              "task_key": "Preparacion_ambiente",
-              "description": "Ejecuta notebook Preparacion_ambiente con parámetros",
-              "notebook_task": {
-                "notebook_path": "/Workspace/racing/scripts/main/Preparacion_ambiente",
-                "source": "WORKSPACE",
-                "base_parameters": {
-                  "storage_name": "sd2111"
-                }
-              },
-              "existing_cluster_id": "$CLUSTER_ID",
-              "timeout_seconds": 3600,
-              "max_retries": 2
-            },
-            {
               "task_key": "Ingest_circuits_data",
               "description": "Ejecuta notebook Ingest_circuits_data con parámetros",
               "notebook_task": {
@@ -160,12 +141,7 @@ jobs:
               },
               "existing_cluster_id": "$CLUSTER_ID",
               "timeout_seconds": 3600,
-              "max_retries": 2,
-              "depends_on": [
-                {
-                  "task_key": "Preparacion_ambiente"
-                }
-              ]
+              "max_retries": 2
             },
             {
               "task_key": "Ingest_racing_data",
@@ -182,12 +158,7 @@ jobs:
               },
               "existing_cluster_id": "$CLUSTER_ID",
               "timeout_seconds": 3600,
-              "max_retries": 2,
-              "depends_on": [
-                {
-                  "task_key": "Preparacion_ambiente"
-                }
-              ]
+              "max_retries": 2
             },
             {
               "task_key": "Tansform",
