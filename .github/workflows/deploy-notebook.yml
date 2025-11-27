@@ -201,7 +201,8 @@ jobs:
               "max_retries": 2,
               "depends_on": [
                 {
-                  "task_key": "Preparacion_ambiente"
+                  "task_key": "Ingest_circuits_data",
+                  "task_key": "Ingest_racing_data"
                 }
               ]
             },
@@ -222,7 +223,7 @@ jobs:
               "max_retries": 2,
               "depends_on": [
                 {
-                  "task_key": "Preparacion_ambiente"
+                  "task_key": "Tansform"
                 }
               ]
             }
