@@ -130,7 +130,7 @@ jobs:
               "task_key": "Preparacion_ambiente",
               "description": "Ejecuta notebook Preparacion_ambiente con parámetros",
               "notebook_task": {
-                "notebook_path": "/Workspace/Users/arturocvsd@outlook.com/ETL/Preparacion_ambiente",
+                "notebook_path": "/Workspace/racing/scripts/main/Preparacion_ambiente",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "storage_name": "sd2111"
@@ -144,7 +144,7 @@ jobs:
               "task_key": "Ingest_circuits_data",
               "description": "Ejecuta notebook Ingest_circuits_data con parámetros",
               "notebook_task": {
-                "notebook_path": "/Workspace/Users/arturocvsd@outlook.com/ETL/Ingest_circuits_data",
+                "notebook_path": "/Workspace/racing/scripts/main/Ingest_circuits_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "storage_name": "sd2111",
@@ -166,7 +166,7 @@ jobs:
               "task_key": "Ingest_racing_data",
               "description": "Ejecuta notebook Ingest_racing_data con parámetros",
               "notebook_task": {
-                "notebook_path": "/Workspace/Users/arturocvsd@outlook.com/ETL/Ingest_racing_data",
+                "notebook_path": "/Workspace/racing/scripts/main/Ingest_racing_data",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "storage_name": "sd2111",
@@ -188,7 +188,7 @@ jobs:
               "task_key": "Tansform",
               "description": "Ejecuta notebook Tansform con parámetros",
               "notebook_task": {
-                "notebook_path": "/Workspace/Users/arturocvsd@outlook.com/ETL/Tansform",
+                "notebook_path": "/Workspace/racing/scripts/main/Tansform",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_dev",
@@ -210,7 +210,7 @@ jobs:
               "task_key": "Load",
               "description": "Ejecuta notebook Load con parámetros",
               "notebook_task": {
-                "notebook_path": "/Workspace/Users/arturocvsd@outlook.com/ETL/Load",
+                "notebook_path": "/Workspace/racing/scripts/main/Load",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "catalog_dev",
